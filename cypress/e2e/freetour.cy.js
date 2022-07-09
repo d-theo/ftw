@@ -8,12 +8,17 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 const participantsObj = {}
 
 describe('#_FREETOUR', () => {
+	const offset = new Date().getTimezoneOffset()
+	const yourDate = new Date(new Date().getTime() - offset * 60 * 1000)
+	const isodate = yourDate.toISOString().split('T')[0]
 	it('passes', () => {
 		cy.visit('https://admin.freetour.com/backoffice/bookings')
 		page.getEmail().type(freetour_login)
 		page.getPass().type(freetour_pass)
 		page.getLogin().click()
-		cy.visit('https://admin.freetour.com/backoffice/bookings')
+		cy.visit(
+			`https://admin.freetour.com/backoffice/bookings?date=${isodate}`
+		)
 
 		page.getParticipants().each((_el, index, _list) => {
 			cy.wrap(_el).within(($el) => {
