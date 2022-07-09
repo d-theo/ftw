@@ -18,7 +18,7 @@ describe('#_BOKUN', () => {
 			.its('length')
 			.then((len) => {
 				for (let i = 2; i < len; i++) {
-					const element = page.getAllTours('Tomorrow').eq(i)
+					const element = page.getAllTours().eq(i)
 					element.children().eq(1).click()
 
 					page.getViewBookings().click()

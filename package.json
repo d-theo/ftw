@@ -2,17 +2,19 @@
 	"name": "fwt",
 	"version": "1.0.0",
 	"description": "",
-	"main": "index.js",
+	"main": "main.js",
 	"scripts": {
-		"fetch:10:es": "cypress run && node file-processor/mains.js 10:00 ES",
-		"fetch:10:en": "cypress run && node file-processor/mains.js 10:00 EN"
+		"fetch:10:es": "cypress run && node file-processor/main.js 10:00 ES",
+		"fetch:10:en": "cypress run && node file-processor/main.js 10:00 EN",
+		"fetch:14:en": "cypress run && node file-processor/main.js 14:00 EN",
+		"fetch:14:es": "cypress run && node file-processor/main.js 14:00 ES",
+		"fetch:18:en": "cypress run && node file-processor/main.js 18:00 EN",
+		"fetch:18:es": "cypress run && node file-processor/main.js 18:00 ES"
 	},
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
+		"csv-writer": "^1.6.0",
 		"cypress": "^10.3.0"
-	},
-	"devDependencies": {
-		"dotenv": "^16.0.1"
 	}
 }

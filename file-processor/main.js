@@ -13,4 +13,19 @@ const data = guru(hours, lang)
 	.concat(freetour(hours, lang))
 console.log(data)
 
+const createCsvWriter = require('csv-writer').createObjectCsvWriter
+const csvWriter = createCsvWriter({
+	path: './results/file.csv',
+	header: [
+		{ id: 'name', title: 'NAME' },
+		{ id: 'count', title: 'Number' },
+	],
+})
+
+csvWriter
+	.writeRecords(data) // returns a promise
+	.then(() => {
+		console.log('...Done')
+	})
+
 fs.writeFileSync('./results/gathered.json', JSON.stringify(data))

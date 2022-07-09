@@ -9,10 +9,10 @@ const LANGS = {
 /*
 INPUT
 {
-    "name": "Ashton Fearnehough",
+    "name": "",
     "nb": "2",
     "lang": "en",
-    "user": "ashronpoole@hotmail.co.uk",
+    "user": "",
     "time": "10:00 AM"
 }*/
 function getFreetourParticipants(hour, lang) {

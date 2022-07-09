@@ -3,10 +3,11 @@ const BOKUN_FILE = 'bokun.json'
 const FREETOUR_FILE = 'freetour.json'
 const GURU_FILE = 'guru.json'
 
-function createParticipant({ name, time, mail, origin }) {
+function createParticipant({ name, time, mail, origin, count }) {
 	return {
 		name,
 		mail,
+		count,
 		origin,
 	}
 }
