@@ -5,7 +5,11 @@ const LANGS = {
 	ES: 'es',
 	EN: 'en',
 }
-
+const HOURS = {
+	'10:00': '10:00',
+	'14:00': '2:00',
+	'18:00': '6:00'
+}
 /*
 INPUT
 {
@@ -21,7 +25,7 @@ function getFreetourParticipants(hour, lang) {
 		const participant = obj[index]
 		if (
 			participant.lang == LANGS[lang] &&
-			participant.time.includes(hour)
+			participant.time.includes(HOURS[hour])
 		) {
 			participants.push(
 				R.createParticipant({

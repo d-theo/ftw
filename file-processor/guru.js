@@ -23,9 +23,13 @@ INPUT
     ]
   }[]*/
 function getGuruParticipants(hour, lang) {
+	const offset = new Date().getTimezoneOffset()
+	const yourDate = new Date(new Date().getTime() - offset * 60 * 1000)
+	const isodate = yourDate.toISOString().split('T')[0]
+
 	const participants = []
 	for (let tour of allTours) {
-		if (tour.lang == LANGS[lang] && tour.time.includes(hour)) {
+		if (tour.lang == LANGS[lang] && tour.time.includes(hour) && tour.date.includes(isodate)) {
 			for (let member of tour.members) {
 				participants.push(
 					R.createParticipant({

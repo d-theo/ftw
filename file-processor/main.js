@@ -20,6 +20,8 @@ const csvWriter = createCsvWriter({
 		{ id: 'name', title: 'NAME' },
 		{ id: 'count', title: 'Number' },
 	],
+	fieldDelimiter: ';',
+	encoding: 'latin1'
 })
 
 csvWriter

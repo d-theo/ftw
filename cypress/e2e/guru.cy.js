@@ -21,6 +21,7 @@ describe('#_GURU', () => {
 					const tourObj = {
 						lang: '',
 						time: '',
+						date: '',
 						members: [],
 					}
 
@@ -44,6 +45,16 @@ describe('#_GURU', () => {
 						.eq(1)
 						.invoke('text')
 						.then((time) => (tourObj.time = time.trim()))
+					cy.get('.tour-session-bookings')
+						.get('.info-container')
+						.children()
+						.eq(0)
+						.children()
+						.eq(0)
+						.children()
+						.eq(1)
+						.invoke('text')
+						.then((date) => (tourObj.date = date.trim()))
 
 					page.getAllParticipants().each((el, i, list) => {
 						const member = { name: '', count: '' }

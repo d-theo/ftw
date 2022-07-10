@@ -14,7 +14,7 @@ describe('#_BOKUN', () => {
 		page.getPass().type(bokun_pass)
 		page.getLogin().click()
 		cy.wait(7000)
-		page.getAllTours('Tomorrow')
+		page.getAllTours()
 			.its('length')
 			.then((len) => {
 				for (let i = 2; i < len; i++) {
